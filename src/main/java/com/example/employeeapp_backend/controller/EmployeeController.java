@@ -22,4 +22,8 @@ public class EmployeeController {
     public String Employeeedit(){
         return "Employee Edit";
     }
+    @GetMapping("/viewall")
+    public String Employeeview(){
+        return "View all employee";
+    }
 }
