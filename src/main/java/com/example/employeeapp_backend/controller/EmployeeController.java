@@ -14,5 +14,8 @@ public class EmployeeController {
     public String Employeeadd(){
         return "Employee add";
     }
-
+    @GetMapping("/search")
+    public String Employeesearch(){
+        return "Employee Search";
+}
 }
