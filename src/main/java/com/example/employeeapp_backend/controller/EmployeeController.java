@@ -14,5 +14,5 @@ public class EmployeeController {
     public String Employeeadd(){
         return "Employee add";
     }
-    @GetMapping("")
+
 }
