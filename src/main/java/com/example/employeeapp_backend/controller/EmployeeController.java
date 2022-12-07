@@ -5,7 +5,9 @@ import com.example.employeeapp_backend.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class EmployeeController {
@@ -14,7 +16,7 @@ public class EmployeeController {
    private EmployeeDao dao;
    @CrossOrigin(origins = "*")
     @PostMapping(path = "/add",consumes = "application/json",produces = "application/json")
-    public String EmployeeAdd(@RequestBody Employee e)
+    public Map<String,String> EmployeeAdd(@RequestBody Employee e)
     {
 
         System.out.println(e.getName().toString());
@@ -26,7 +28,9 @@ public class EmployeeController {
         System.out.println(e.getSalary().toString());
         System.out.println(e.getUsername().toString());
         dao.save(e);
-        return "Employee added succesfully";
+        HashMap <String,String> map=new HashMap<>();
+        map.put("status","success");
+        return map;
     }
     @CrossOrigin(origins = "*")
     @GetMapping("/view")
